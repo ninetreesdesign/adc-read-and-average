@@ -7,7 +7,7 @@ const uint16_t DAC_BITS = 16;  // use 16 to match word sizes (DAC board)
 const float V_REF = 3.317;     // measured, unit #1
 
 uint16_t adc_val = 0;
-char msg[80];
+char msg[80];   // container for formatted strings
 // intervals for various timed events
 const uint32_t SENSORS_INTERVAL = 100;  // ms
 const uint32_t PRINT_INTERVAL = 500;    // ms
