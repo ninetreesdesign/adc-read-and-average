@@ -1,7 +1,7 @@
 /* Example program to show an ADC average program
 */
 
-#include <Arduino.h>
+//#include <Arduino.h>
 const uint16_t ADC_BITS = 16;  // use 16 to match word sizes
 const uint16_t DAC_BITS = 16;  // use 16 to match word sizes (DAC board)
 const float V_REF = 3.317;     // measured, unit #1
@@ -23,7 +23,7 @@ void setup() {
   uint16_t t0 = millis();
   Serial.begin(115200);
   while (!Serial && (millis() - t0 < 5000)) {}  // include timeout if print console isn't opened
-  sprintf(msg, "\n@   %6lu ms, Console Serial port initialized.\n", millis() - t0);
+  sprintf(msg, "\n  %4lu ms, Console Serial port initialized.\n", millis() - t0);
   Serial.print(msg);
 }
 
@@ -42,7 +42,7 @@ void loop() {
   // print at set interval
   if (millis() > since_print + PRINT_INTERVAL) {
     since_print = millis();
-    sprintf(msg, "  ADC: %5u \n", adc_val);   
+    sprintf(msg, "  ADC: %5u \n", adc_val);
     Serial.print(msg);
   }
 }
